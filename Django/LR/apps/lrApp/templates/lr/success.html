@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Dashboard</title>
+</head>
+<body>
+
+    <h1>Hello, {{user.first_name}}!</h1>
+    <h5>Your Trip Schedules</h5>
+    <table border="True">
+      <tr>
+        <th>Destination</th>
+        <th>Travel Start Date</th>
+        <th>Travel End Date</th>
+        <th>Plan</th>
+      </tr>
+      <tbody>
+        <tr>
+          <td><a href="#"></a></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h5>Other User's Travel Plans</h5>
+    <table border='True'>
+      <tr>
+        <th>Name</th>
+        <th>Destination</th>
+        <th>Travel Start Date</th>
+        <th>Travel End Date</th>
+        <th>Do You Plan to join!?</th>
+      </tr>
+    <tbody>
+      <tr>
+        <td></td>
+        <td><a href="#"></a></td>
+        <td></td>
+        <td></td>
+        <td><a href="#">Join</a></td>
+      </tr>
+    </tbody>
+    </table>
+
+  <a href='/addplan'>Add a Travel Plan</a>
+
+
+
+
+  {%comment%}
+  {% if messages %}
+    {% for message in messages %}
+      <h1>{{ message }}</h1>
+    {% endfor %}
+  {% endif %}
+{%endcomment%}
+</body>
+</html>

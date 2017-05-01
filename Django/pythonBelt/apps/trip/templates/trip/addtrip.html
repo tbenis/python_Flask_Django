@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add Plan</title>
+  </head>
+  <body>
+    <h1>Add a Trip</h1>
+    <p><a href="/success">Home</a> | <a href="/clear">Logout</a></p>
+  <form  action="/success" method="post">
+    {% csrf_token %}
+    <p>Destination: <input type="text" name="destination" required></p>
+    <p>Description: <input type="text" name="description" required></p>
+    <p>Travel Date From: <input type="date" name="from" required></p>
+    <p>Travel Date TO: <input type="date" name="till" required></p>
+    <input type="submit" name="" value="Add">
+
+  </form>
+  </body>
+</html>

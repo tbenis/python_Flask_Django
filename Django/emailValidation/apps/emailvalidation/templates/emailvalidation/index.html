@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Email Page</title>
+</head>
+
+<body>
+    <form class="" action="/email_process" method="post">
+        {% csrf_token %}
+        {{error}}
+        <input type="text" name="email" value="">
+        <input type="submit" name="" value="Submit">
+    </form>
+</body>
+
+</html>

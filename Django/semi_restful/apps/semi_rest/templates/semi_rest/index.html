@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All Products | Semi Restful Route Demo</title>
+  </head>
+  <body>
+  <h1>Products:</h1>
+  <table border="True">
+    <tr>
+      <h5><th>Name</th></h5>
+      <h5><th>Description</th></h5>
+      <h5><th>Price</th></h5>
+      <h5><th>Actions</th></h5>
+    </tr>
+    <tbody>
+      {% for product in products %}
+      <tr>
+        <p><td>{{product.name}} </td></p>
+        <p><td> {{product.description}}</td></p>
+        <p><td>$ {{product.price}}</td></p>
+    <td> <p><a href="/show/{{product.id}}">Show</a>    |  <a href="/edit/{{product.id}}">Edit</a> | <a style='border: 1px solid' href="/destroy/{{product.id}}">Remove</a></p></td>
+      </tr>
+    {%endfor%}
+    </tbody>
+  </table>
+  <a href="/new">Add a new product</a>
+  </body>
+</html>

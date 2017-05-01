@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+</head>
+
+<body>
+    {% with error = get_flashed_messages() %}
+     {% if error %}
+      {% for message in error %}
+        <h1 class="error_message">{{message}}</h1>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+<form class="" action="/registration" method="post">
+        <h1>Register</h1>
+      <input type="hidden" name="hide" value="hideThis">
+        Email: <input type="text" name="email" value="">
+        First Name: <input type="text" name="first_name" value="">
+        Last Name: <input type="text" name="last_name" value="">
+        Password: <input type="password" name="password" value="">
+        Confirm Password: <input type="password" name="passwordConfirm" value="">
+      <input type="submit" name="finish" value="Register">
+    </form>
+
+    <form class="" action="/login" method="post">
+      <h1>Log In</h1>
+      <input type="hidden" name="hide" value="hideThis">
+      Email: <input type="text" name="email" value="">
+      Password: <input type="password" name="password" value="">
+      <input class="ninja" type="submit" name="finish" value="SignIn">
+    </form>
+
+</body>
+
+</html>

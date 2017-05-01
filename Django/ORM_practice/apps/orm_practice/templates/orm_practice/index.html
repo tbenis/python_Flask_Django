@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ORM Practice</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+
+  {% for blog in blogs%}
+
+    <h5>{{blog.title}}</h5>
+
+    <p>{{blog.blog}}</p>
+
+  {% for comment in blog.comment_set.all%}
+  <p>{{comment.comment}}</p>
+  {%endfor%}
+  <form class="" action="/comments/{{blog.id}}" method="post">
+  {%csrf_token%}
+
+  <p><textarea name="comment" rows="8" cols="80"></textarea></p>
+  <input type="submit" value="Enter Comment on this Blog!">
+  </form>
+  {%endfor%}
+<br />
+<br>
+<br>
+
+  <form class="" action="/blogs" method="post">
+  {%csrf_token%}
+  <label>Title</label>
+  <input type="text" name="title" >
+  <p><textarea name="blog" rows="8" cols="80"></textarea></p>
+  <input type="submit" value="Enter Blog">
+  </form>
+  </body>
+</html>

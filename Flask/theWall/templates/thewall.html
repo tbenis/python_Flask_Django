@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Actual Wall</title>
+  </head>
+  <body>
+
+
+  <div id = "header">
+    <h1>The Wall!</h1>
+    <div>
+      <h4>Welcome {{session['first_name']}}</h4>
+      <a href="/logout">Log Out</a>
+    </div>
+    <div class="posts">
+      <form class="" action="/post_message" method="post">
+        <h2>Pot a message</h2>
+        <textarea name="message"></textarea>
+        <p><input type="submit" name="" value="POST"></p>
+      </form>
+    </div>
+    <div id="posts">
+      {%for message in session['messages']%}
+          <div class="message">
+            <h3>{{message['first_name']}} {{message['last_name']}} - {{message['created_at']}}</h3>
+            <p>{{message['message']}}</p>
+            <div class="">
+            </div>
+          </div>
+
+            {% for comment in session['comments']%}
+              {%if comment['message_id'] == message['message_id']%}
+                <h5>{{comment['first_name']}} {{comment['last_name']}} - {{comment['created_at']}}</h5>
+                <p>{{ comment['comment']}}</p>
+              {%endif%}
+            {% endfor %}
+              <form action="/post_comment" method="post">
+                <textarea name="comment" placeholder="Write a comment...."></textarea>
+                <input type="hidden" name="message_id" value="{{message['message_id']}}">
+                <input type="submit" value="Comment">
+              </form>
+      {%endfor%}
+    </div>
+  </div>
+
+    <!-- <form action="/wall/message" method="post">
+      <textarea name="message" rows="8" cols="80"></textarea>
+      <input type="submit" name="" value="Submit Message">
+    </form> -->
+  </body>
+</html>
+<!-- SOMEONE MIGHT HAVE HEARD -->

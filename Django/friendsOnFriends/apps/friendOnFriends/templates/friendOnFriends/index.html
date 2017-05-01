@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Friends On Friends</title>
+</head>
+
+<body>
+    <table>
+        {% for index in friendship%}
+        <tr>
+            <td>{{index.p1.name}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+
+    <form class="" action="/add" method="post">
+        {% csrf_token %}
+        <input type="text" name="p1" value="">
+        <input type="submit" value="Add Friend">
+
+    </form>
+    <form action="/addf" method="post">
+        {% csrf_token %}
+        <select name='p1' id= "p1">
+          {%for name in people%}
+      <option value={{"name.id"}}>{{name.name}}</option>
+      {%endfor%}
+    </select>
+        <select name="p2" id ="p2">
+        {%for name in people%}
+  <option value={{"name.id"}}>{{name.name}}</option>
+{%endfor%}
+
+</select>
+        <input type="submit" name="" value="addrel">
+    </form>
+</body>
+
+</html>

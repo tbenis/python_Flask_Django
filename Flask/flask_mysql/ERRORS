@@ -1,0 +1,4 @@
+** FIX THIS BY CHANGING THE NAME ON THE  PASSWORD ON LINE 11 (MYSQL CONNECTOR FILE) FORM WRONG PASSWORD('yes') TO 'root' **
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+** **

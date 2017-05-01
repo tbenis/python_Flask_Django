@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /*width: 970;
+    margin: 0 auto;*/
+
+    /*display: flex;
+    justify-content: space-around;*/
+}
+
+form {
+    display: inline-block;
+    border: 1px solid;
+    background-color: hotpink;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 20px;
+}
+textarea{
+  overflow: auto;
+}
+.danger {
+  color: red;
+}
+.pass {
+  color: green;
+}

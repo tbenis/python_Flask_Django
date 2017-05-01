@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>The Great Number Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='game.css') }}">
+</head>
+
+<body>
+    <h2>Welcome to the Great Number Game!</h2>
+    <p><strong>I am thinking of a number between 1 and 100</strong></p>
+    <p>take a guess!</p>
+    <h1 style="color: black;"><strong>{{session['guess']}}</strong></h1>
+    <h1>{{session['random_number']}}</h1>
+    <form class="" action="/submit" method="post">
+        <input type="hidden" name="sub" value="submit">
+        <input id='guess' type="text" name="guess" value="">
+        <input id='button' type="submit" name="button" value="Submit">
+    </form>
+</body>
+
+</html>
+<!-- link for imojis
+http://apps.timwhitlock.info/emoji/tables/unicode
+-->

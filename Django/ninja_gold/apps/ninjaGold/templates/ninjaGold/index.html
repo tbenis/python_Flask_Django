@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ninja Gold</title>
+</head>
+
+<body>
+    <div class="">
+        <h1>Your Gold: {{request.session.gold}}</h1>
+    </div>
+    <div class="">
+        <h1>Farm</h1>
+        <p>(earn 10-20 golds)</p>
+        <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="farm" />
+            <input type="submit" value="Find Gold!" />
+        </form>
+    </div>
+
+    <div class="">
+        <h1>Cave</h1>
+        <p>(earn 5-10 golds)</p>
+        <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="cave" />
+            <input type="submit" value="Find Gold!" />
+        </form>
+    </div>
+
+    <div class="">
+        <h1>House</h1>
+        <p>(earn 2-5 golds)</p>
+        <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="house" />
+            <input type="submit" value="Find Gold!" />
+        </form>
+    </div>
+    <div class="">
+        <h1>Casino</h1>
+        <p>(earns/takes 0-50 golds)</p>
+        <form action="/process_money" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="building" value="casino" />
+            <input type="submit" value="Find Gold!" />
+        </form>
+    </div>
+
+
+    </form>
+<p>activites:</p>
+<div style="border: 1px solid; overflow-y: auto; height:150px;"class="">
+
+  {% for index in request.session.arrayGold %}
+  <p class={{index.color}}> {{index.sentence}}</p>
+  {% endfor %}
+</div>
+
+</body>
+
+</html>

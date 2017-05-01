@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Survey</title>
+</head>
+
+<body>
+    <h1>this is the survey</h1>
+    <form action="/survey" method="post">
+        {% csrf_token %}
+        Your Name:<input type="text" name="" value="">
+        Dojo Location:
+          <select>
+            <option>Mountain Views</option>
+            <option>Coffee</option>
+          </select>
+        Favorite Language:
+          <select>
+            <option>Java Script</option>
+            <option>python</option>
+          </select>
+        comment (optional):<input type="text" name="" value="">
+    </form>
+</body>
+
+</html>
